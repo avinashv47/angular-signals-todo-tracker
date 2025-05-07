@@ -10,9 +10,9 @@ export class TodoService {
   pendingTasks = computed(() => this.todos().filter(t => !t.completed));
 
   constructor() {
-    effect(() => {
-      console.log('Todos updated:', this.todos());
-    });
+    // effect(() => {
+    //   console.log('Todos updated:', this.todos());
+    // });
   }
 
   addTodo(title: string) {

@@ -1,5 +1,5 @@
 {
-  "name": "angular-todos",
+  "name": "angular-signals-todo-tracker",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

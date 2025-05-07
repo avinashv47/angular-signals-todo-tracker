@@ -1,27 +1,29 @@
-<h1>Todo Tracker</h1>
+<div class="main-container">
+  <h1>Todo Tracker</h1>
 
-<mat-form-field>
-  <mat-label>Add a todo</mat-label>
-  <input matInput [(ngModel)]="newTodo" />
-</mat-form-field>
-<button mat-raised-button (click)="add()">Add</button>
+  <mat-form-field>
+    <mat-label>Add a todo</mat-label>
+    <input matInput [(ngModel)]="newTodo" />
+  </mat-form-field>
+  <button mat-button (click)="add()">Add</button>
 
-<ul>
-  @for(todo of todoService.todosList(); track todo) {
-  <li [ngClass]="{ completed: todo.completed }">
-    <input
-      type="checkbox"
-      [checked]="todo.completed"
-      (change)="todoService.toggleTodo(todo.id)"
-    />
-    {{ todo.title }}
-    <button mat-icon-button (click)="todoService.deleteTodo(todo.id)">
-      <mat-icon fontIcon="delete"></mat-icon>
-    </button>
-  </li>
-  }
-</ul>
+  <ul>
+    @for(todo of todoService.todosList(); track todo) {
+    <li [ngClass]="{ completed: todo.completed }">
+      <input
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="todoService.toggleTodo(todo.id)"
+      />
+      {{ todo.title }}
+      <button mat-icon-button (click)="todoService.deleteTodo(todo.id)">
+        <mat-icon fontIcon="delete"></mat-icon>
+      </button>
+    </li>
+    }
+  </ul>
 
-<p>Total: {{ todoService.todosList().length }}</p>
-<p>Completed: {{ todoService.completedTasks().length }}</p>
-<p>Pending: {{ todoService.pendingTasks().length }}</p>
+  <p>Total: {{ todoService.todosList().length }}</p>
+  <p>Completed: {{ todoService.completedTasks().length }}</p>
+  <p>Pending: {{ todoService.pendingTasks().length }}</p>
+</div>
