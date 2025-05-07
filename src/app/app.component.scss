@@ -1,0 +1,12 @@
+input { margin-right: 8px; }
+
+li { 
+    list-style: none; 
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+}
